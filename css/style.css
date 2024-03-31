@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
+
+/* @font-face{
+    font-family: "Poppins";
+
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mountains of Christmas", serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    187deg,
+    rgba(0, 1, 41, 1) 0%,
+    rgba(30, 104, 255, 1) 100%
+  );
+  cursor: url(../img/cursor_navidad.png), default;
+
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contenedor::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  z-index: 1;
+  bottom: 0;
+  background-image: url(../img/tree.png);
+}
+
+.contenedor .circulo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-image: url(../img/lunaTextura.png);
+  filter: brightness(250%);
+  box-shadow: 0 0px 60px 25px white;
+}
+
+.contenedor .circulo::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/santa.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 600px;
+  inset: -200px;
+  animation: animacionSanta 5s ease-in-out infinite;
+}
+
+.contenedor .snow {
+  position: relative;
+  display: flex;
+}
+
+.contenedor .snow span {
+  position: relative;
+  min-width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 1vw;
+  box-shadow: 100px 20px 5px #fff, 100px 20px 10px;
+  animation: animacionNieve 15s linear infinite;
+  animation-duration: calc(200s / var(--i));
+ 
+
+}
+
+.contenedor .snow span:nth-child(even) {
+  min-width: 10px;
+  height: 10px;
+}
+
+/*TIMER*/
+.contenedor_timer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_timer .contenedor_tiempos {
+  display: flex;
+  margin-top: 15%;
+  gap: 100px;
+}
+
+.contenedor_timer .contenedor_tiempos .item {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 32px;
+  color: #fafafa;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 1px #000;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.contenedor_timer .contenedor_tiempos .item p {
+  background-color: #a80404;
+  border: 1px solid #000;
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+ 
+}
+
+.contenedor_timer .contenedor_tiempos .item .cont {
+  border-radius: 20px 20px 0px 0px;
+  background-color: #eaeaeaee;
+
+  padding: 30px;
+}
+
+@keyframes animacionNieve {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes animacionSanta {
+  0% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
